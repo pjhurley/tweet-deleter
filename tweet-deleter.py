@@ -1,10 +1,11 @@
 import tweepy
 import thread
 
-consumer_key = "9k84eTLu4k76ISmm46L2M2wBi"
-consumer_secret = "eUh6b4vlNG0bwB4zE3TxlJUwFHlj2B3Kzteg4o4YAwDi6Nqznj"
-access_key = "3245900866-XP5oOyBF1X6obpj6BzY3CZt6BHpkwh5ROev4S5I"
-access_secret = "WbwtQAycl1psGfymOoO6VAWG6sYI8ceEllpzHWDgyQMNc"
+# Twitter credentials found on 'developer' section go here.
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret = ""
 
 class myDate():
     month = 0
@@ -71,13 +72,11 @@ def deleteTweets(api, deleteDate):
     yesORno = raw_input("> ")
     if yesORno.lower() == 'delete':
         for status in tweepy.Cursor(api.user_timeline).items():
-            #strArray = status.created_at.split()
             tweetDate = myDate(status.created_at.month, status.created_at.year)
             if isEarlierThan(deleteDate, tweetDate) == 1:
                 try:
                     api.destroy_status(status.id)
                     print "Deleted: ", status.id
-                    #thread.start_new_thread(deleteThread, (api, status.id, ))
                 except:
                     print "Failed to delete: ", status.id
 
