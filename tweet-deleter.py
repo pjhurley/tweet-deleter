@@ -12,30 +12,7 @@ class myDate():
     year = 0
 
     def __init__(self, month, year):
-        if month == 'Jan':
-            self.month = 1
-        elif month == 'Feb':
-            self.month = 2
-        elif month == 'Mar':
-            self.month = 3
-        elif month == 'Apr':
-            self.month = 4
-        elif month == 'May':
-            self.month = 5
-        elif month == 'Jun':
-            self.month = 6
-        elif month == 'Jul':
-            self.month = 7
-        elif month == 'Aug':
-            self.month = 8
-        elif month == 'Sep':
-            self.month = 9
-        elif month == 'Oct':
-            self.month = 10
-        elif month == 'Nov':
-            self.month = 11
-        elif month == 'Dec':
-            self.month = 12
+        self.month = month
         self.year = year
 
 def oauth_login(consumer_key, consumer_secret):
